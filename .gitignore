@@ -1,0 +1,19 @@
+datasets/ultralytics/
+mydata/
+data/import/*.json
+data/import/*.xml
+data/export/*.json
+data/export/*.txt
+data/export/*.xml
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+mydata/
+# Virtual environments
+.venv

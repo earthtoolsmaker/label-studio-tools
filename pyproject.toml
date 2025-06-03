@@ -1,0 +1,10 @@
+[project]
+name = "lstudio"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "label-studio>=1.18.0",
+    "label-studio-converter>=0.0.59",
+]

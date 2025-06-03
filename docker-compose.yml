@@ -1,0 +1,17 @@
+---
+services:
+  label-studio:
+    image: heartexlabs/label-studio:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./mydata:/label-studio/data
+    stdin_open: true # equivalent to -it
+    tty: true # equivalent to -it
+
+  image-server:
+    build: ./docker/
+    volumes:
+      - ./datasets:/datasets
+    ports:
+      - "8000:8000"

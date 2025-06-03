@@ -1,0 +1,71 @@
+# LabelStudio tooling
+
+Set of tools and scripts to leverage `LabelStudio` to
+import/export/check annotations made by CV models.
+
+## Scaffolding
+
+- The datasets are located in `./datasets` and the folder will be served
+statically by the HTTP server.
+- `./mydata` is used by label-studio to store data locally.
+- `./docker` contains the Dockerfiles
+
+## YOLO Datasets
+
+This is the coco8-import dataset:
+
+```txt
+.
+├── classes.txt
+├── images
+│   ├── 000000000009.jpg
+│   ├── 000000000025.jpg
+│   ├── 000000000030.jpg
+│   └── 000000000034.jpg
+└── labels
+    ├── 000000000009.txt
+    ├── 000000000025.txt
+    ├── 000000000030.txt
+    └── 000000000034.txt
+```
+
+The classes.txt file should contain all classes in the right order:
+
+```txt
+person
+bicycle
+car
+motorcycle
+airplane
+...
+teddy bear
+hair drier
+toothbrush
+```
+
+## Commands
+
+Start label-studio and a local HTTP server to serve images from a dataset:
+
+```bash
+docker compose up
+```
+
+__Note__: Label Studio is started on port 8080 and the HTTP static server on
+port 8000.
+
+Import a Ultralytics dataset:
+
+```bash
+uv run label-studio-converter import yolo \
+  -i ./datasets/ultralytics/coco8/ \
+  -o data/import/ls-tasks.json \
+  --image-root-url "http://localhost:8000/ultralytics/coco8/images/"
+```
+
+__Note__: It will generate a `ls-tasks.json` and a `ls-tasks.label_config.xml`
+files that can be imported in a label studio project.
+
+## Resources
+
+- [LabelStudio Blog: Importing Local YOLO Pre-Annotated Images to Label Studio]
