@@ -3,6 +3,34 @@
 Set of tools and scripts to leverage `LabelStudio` to
 import/export/check annotations made by CV models.
 
+## Workflows
+
+### Import and Review ultralytics YOLO predictions
+
+
+1. Import the ultralytics dataset
+
+```bash
+uv run label-studio-converter import yolo \
+  -i ./datasets/ultralytics/coco8/ \
+  -o data/import/ls-tasks.json \
+  --image-root-url "http://localhost:8000/ultralytics/coco8/images/"
+```
+
+2. Start the label-studio environment
+
+```bash
+docker compose up
+```
+
+3. Follow the instructions from the import command to import data into label
+   studio
+
+### Export LabelStudio Annotations from LabelStudio in YOLO format
+
+1. Select the Export button in the Project > YOLO with Images
+2. All the label txt files have their updated bbox coords
+
 ## Scaffolding
 
 - The datasets are located in `./datasets` and the folder will be served
