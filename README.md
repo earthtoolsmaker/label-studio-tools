@@ -96,4 +96,4 @@ files that can be imported in a label studio project.
 
 ## Resources
 
-- [LabelStudio Blog: Importing Local YOLO Pre-Annotated Images to Label Studio]
+- [LabelStudio Blog: Importing Local YOLO Pre-Annotated Images to Label Studio](https://labelstud.io/blog/tutorial-importing-local-yolo-pre-annotated-images-to-label-studio/)
