@@ -1,0 +1,10 @@
+instance_type = "t3.small"
+db_username = "your_db_username"
+db_password = "your_secure_password"
+db_name = "labelstudio"
+db_port = 5432
+s3_bucket_name = "your-s3-bucket-name"
+aws_region = "us-west-2"
+labelstudio_username = "labelstudio"
+labelstudio_password = "your_secure_password"
+labelstudio_token = "random_string"
